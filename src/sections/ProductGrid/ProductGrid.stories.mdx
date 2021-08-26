@@ -1,0 +1,37 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
+import LinkTo from '@storybook/addon-links/react'
+
+import { collection } from '../../lib/mocks'
+import ProductGrid from '.'
+
+<Meta
+  title="Sections/ProductGrid"
+  component={ProductGrid}
+  argTypes={{
+    showTitle: {
+      control: 'boolean',
+    },
+  }}
+/>
+
+# ProductGrid
+
+The `ProductGrid` component displays a collection of products.
+
+## Usage
+
+`ProductGrid` accepts a collection. See a collection example on the <LinkTo kind="docs-models--page#collection-of-products">**Models page**</LinkTo>.
+
+## Props
+
+<ArgsTable of={ProductGrid} />
+
+## Examples
+
+### Default
+
+<Canvas>
+  <Story name="Default" args={{ showTitle: true }}>
+    {args => <ProductGrid collection={collection} productsPerPage={5} {...args} />}
+  </Story>
+</Canvas>

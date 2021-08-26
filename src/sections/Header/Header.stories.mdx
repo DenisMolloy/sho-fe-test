@@ -1,0 +1,49 @@
+import { ArgsTable, Meta, Preview, Story } from '@storybook/addon-docs'
+
+import { menu } from '../../lib/mocks'
+
+import Header from '.'
+
+<Meta
+  title="Sections/Header"
+  component={Header}
+  argTypes={{
+    sticky: { control: 'boolean' },
+    logoImage: {
+      table: {
+        disable: true,
+      },
+    },
+    logoLink: {
+      table: {
+        disable: true,
+      },
+    },
+  }}
+  args={{
+    menu: menu,
+  }}
+  parameters={{ layout: 'centered' }}
+/>
+
+# Header
+
+This is the site header. It renders a logo, a menu and a cart icon button. The component is responsive.
+
+## Props
+
+<ArgsTable of={Header} />
+
+## Examples
+
+### Default
+
+<Preview>
+  <Story name="Default">
+    {args => (
+      <div style={{ width: '95vw' }}>
+        <Header {...args} />
+      </div>
+    )}
+  </Story>
+</Preview>

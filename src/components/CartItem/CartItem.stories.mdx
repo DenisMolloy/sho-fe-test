@@ -1,0 +1,50 @@
+import { ArgsTable, Meta, Preview, Story } from '@storybook/addon-docs/'
+
+import CartItem from '.'
+import getDecorators from './decorators'
+
+<Meta title="Components/CartItem" component={CartItem} parameters={{ layout: 'centered' }} />
+
+# CartItem
+
+The `CartItem` component shows the product information in the cart and allows the user to modify or remove the item.
+
+## Props
+
+<ArgsTable of={CartItem} />
+
+## Default
+
+<Preview>
+  <Story
+    name="Default"
+    decorators={getDecorators([0])}
+    parameters={{
+      docs: {
+        source: {
+          code: '<CartItem product={product} />',
+        },
+      },
+    }}
+  >
+    <CartItem />
+  </Story>
+</Preview>
+
+## Sold out
+
+<Preview>
+  <Story
+    name="Sold out"
+    decorators={getDecorators([1])}
+    parameters={{
+      docs: {
+        source: {
+          code: '<CartItem product={product} />',
+        },
+      },
+    }}
+  >
+    <CartItem />
+  </Story>
+</Preview>

@@ -1,0 +1,91 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
+
+import Flex from '.'
+import Container from '../Container'
+import Spacer from '../Spacer'
+
+<Meta
+  title="UI Primitives/Flex"
+  component={Flex}
+  argTypes={{
+    children: { table: { disable: true } },
+    direction: {
+      control: {
+        type: 'select',
+        options: ['row', 'column', 'row-reverse', 'column-reverse'],
+      },
+    },
+  }}
+  parameters={{ layout: 'centered' }}
+/>
+
+# Flex
+
+Flex is Container with `display: flex` and comes with helpful style shorthand. It renders a `div` element.
+
+## Props
+
+<ArgsTable of={Flex} />
+
+In addition, any property of the [Chakra UI Flex component](https://chakra-ui.com/docs/layout/flex#props) can be used.
+
+## Examples
+
+<Canvas>
+  <Story
+    name="default"
+    argTypes={{
+      justify: {
+        control: {
+          type: 'select',
+          options: ['start', 'center', 'space-around', 'space-between', 'space-evenly'],
+        },
+      },
+      align: {
+        control: {
+          type: 'select',
+          options: ['start', 'end', 'stretch', 'center'],
+        },
+      },
+    }}
+    args={{
+      direction: 'row',
+      justify: 'start',
+      align: 'start',
+    }}
+  >
+    {args => (
+      <Flex {...args}>
+        <Container p="4" bg="red.400">
+          Container 1
+        </Container>
+        <Container p="4" bg="blue.400">
+          Container 2
+        </Container>
+      </Flex>
+    )}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
+    name="with Spacer"
+    args={{
+      direction: 'row',
+    }}
+  >
+    {args => (
+      <div style={{ margin: '.25rem', width: '95vw' }}>
+        <Flex {...args}>
+          <Container p="4" bg="red.400">
+            Container 1
+          </Container>
+          <Spacer />
+          <Container p="4" bg="blue.400">
+            Container 2
+          </Container>
+        </Flex>
+      </div>
+    )}
+  </Story>
+</Canvas>

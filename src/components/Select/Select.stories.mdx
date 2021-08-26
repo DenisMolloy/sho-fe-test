@@ -1,0 +1,66 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs'
+
+import Select from '.'
+
+<Meta
+  title="UI Primitives/Select"
+  component={Select}
+  argTypes={{
+    onChange: {
+      action: 'Select changed option',
+    },
+  }}
+  args={{
+    placeholder: 'Select an option',
+    options: [
+      {
+        value: '0',
+        text: 'Size 0',
+      },
+      {
+        value: '1',
+        text: 'Size 1',
+      },
+      {
+        value: '2',
+        text: 'Size 2',
+      },
+      {
+        value: '3',
+        text: 'Size 3',
+      },
+      {
+        value: '4',
+        text: 'Size 4',
+      },
+    ],
+  }}
+  parameters={{ layout: 'centered' }}
+/>
+
+# Select
+
+The `Select` component allows users to pick a value from a set of predefined options.
+
+## Props
+
+<ArgsTable of={Select} />
+
+Where `Options` is:
+
+```ts
+interface Options {
+  value: string
+  text: string
+}
+```
+
+In addition, any property of the [Chakra UI Select component](https://chakra-ui.com/docs/form/select#props) can be used.
+
+## Examples
+
+### Default
+
+<Canvas>
+  <Story name="default">{args => <Select {...args} />}</Story>
+</Canvas>

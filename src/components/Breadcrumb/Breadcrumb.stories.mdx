@@ -1,0 +1,42 @@
+import { ArgsTable, Meta, Preview, Story } from '@storybook/addon-docs'
+
+import Breadcrumb from '.'
+
+<Meta
+  title="UI Primitives/Breadcrumb"
+  component={Breadcrumb}
+  args={{
+    items: [
+      {
+        label: 'First',
+        url: '/first-url',
+      },
+      {
+        label: 'Second',
+        url: '/second-url',
+      },
+      {
+        label: 'Third',
+        url: '/third-url',
+        isCurrentPage: true,
+      },
+    ],
+  }}
+  parameters={{ layout: 'centered' }}
+/>
+
+# Breadcrumb
+
+Breadcrumbs help users to navigate through page levels of a website, especially if that website has many pages.
+
+## Props
+
+<ArgsTable of={Breadcrumb} />
+
+## Examples
+
+### Default
+
+<Preview>
+  <Story name="Default">{args => <Breadcrumb {...args} />}</Story>
+</Preview>

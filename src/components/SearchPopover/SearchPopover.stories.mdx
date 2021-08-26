@@ -1,0 +1,65 @@
+import { ArgsTable, Meta, Preview, Story } from '@storybook/addon-docs'
+import LinkTo from '@storybook/addon-links/react'
+
+import SearchPopover from '.'
+
+<Meta
+  title="Components/SearchPopover"
+  component={SearchPopover}
+  argTypes={{
+    placeholder: {
+      control: 'text',
+    },
+    icon: {
+      control: {
+        type: null,
+      },
+    },
+    onSearchSubmit: {
+      action: 'Search submit',
+    },
+  }}
+  decorators={[
+    Story => (
+      <div
+        style={{
+          width: '20rem',
+          height: '10rem',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+        }}
+      >
+        <Story />
+      </div>
+    ),
+  ]}
+  parameters={{ layout: 'centered' }}
+/>
+
+# SearchPopover
+
+**SearchPopover** component displays an icon button which triggers a popover with <LinkTo kind="components-searchqueryinput--default-story">**_SearchQueryInput component_**</LinkTo>.
+
+## Props
+
+<ArgsTable of={SearchPopover} />
+
+## Examples
+
+### Default
+
+<Preview>
+  <Story
+    name="Default"
+    parameters={{
+      docs: {
+        source: {
+          code: '<SearchPopover />',
+        },
+      },
+    }}
+  >
+    {args => <SearchPopover {...args} icon={undefined} />}
+  </Story>
+</Preview>

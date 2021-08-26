@@ -1,0 +1,110 @@
+import { ArgsTable, Meta, Preview, Story } from '@storybook/addon-docs'
+
+import Link from '.'
+import Icon from '../Icon'
+
+<Meta
+  title="UI Primitives/Link"
+  component={Link}
+  argTypes={{
+    href: { control: 'text' },
+    variant: {
+      control: {
+        type: 'select',
+        options: ['outline', 'primary', 'secondary', 'default'],
+      },
+    },
+  }}
+  parameters={{ layout: 'centered' }}
+/>
+
+# Link
+
+Links are accessible elements used primarily for navigation and renders an `a` tag.
+
+## Props
+
+<ArgsTable of={Link} />
+
+In addition, all attributes supported by the [`a` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#attributes) can be used.
+
+## Examples
+
+### Internal
+
+<Preview>
+  <Story
+    name="Internal"
+    args={{
+      children: 'Internal link',
+      href: '/products/foo-bar',
+      variant: 'default',
+    }}
+  >
+    {args => <Link {...args}>{args.children}</Link>}
+  </Story>
+</Preview>
+
+### External
+
+<Preview>
+  <Story
+    name="External"
+    argTypes={{
+      href: {
+        table: {
+          disable: true,
+        },
+      },
+    }}
+    args={{
+      children: 'External link',
+      href: 'https://getshogun.com',
+      variant: 'default',
+    }}
+  >
+    {args => <Link {...args}>{args.children}</Link>}
+  </Story>
+</Preview>
+
+### iconWrapper Variant
+
+<Preview>
+  <Story
+    name="iconWrapper"
+    argTypes={{
+      href: {
+        table: {
+          disable: true,
+        },
+      },
+      variant: {
+        table: {
+          disable: true,
+        },
+      },
+    }}
+  >
+    {args => (
+      <Link href="https://getshogun.com" size={8} variant="iconWrapper" aria-label="search">
+        <Icon icon="SearchIcon" size="md" />
+      </Link>
+    )}
+  </Story>
+</Preview>
+
+### Custom Properties
+
+<Preview>
+  <Story
+    name="Custom Properties"
+    args={{
+      children: 'Click here',
+      href: 'https://getshogun.com',
+      target: '_blank',
+      title: 'Go to Shogun',
+    }}
+  >
+    {args => <Link {...args}>{args.children}</Link>}
+  </Story>
+</Preview>

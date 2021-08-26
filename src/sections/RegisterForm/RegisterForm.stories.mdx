@@ -1,0 +1,25 @@
+import { ArgsTable, Meta, Preview, Story } from '@storybook/addon-docs'
+
+import { getCustomerDecorator } from '../../lib/decorators'
+
+import RegisterForm from '.'
+
+<Meta title="Sections/RegisterForm" component={RegisterForm} />
+
+# RegisterForm
+
+An application component that renders a fully functional form allowing users to register into your store.
+
+## Props
+
+<ArgsTable of={RegisterForm} />
+
+## Examples
+
+### Default
+
+<Preview>
+  <Story name="Default" decorators={[getCustomerDecorator()]}>
+    <RegisterForm />
+  </Story>
+</Preview>

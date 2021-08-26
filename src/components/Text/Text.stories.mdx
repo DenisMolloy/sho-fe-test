@@ -1,0 +1,61 @@
+import { Meta, Preview, Story } from '@storybook/addon-docs'
+
+import Text from '.'
+
+<Meta
+  title="UI Primitives/Text"
+  component={Text}
+  argTypes={{
+    children: {
+      control: {
+        type: 'text',
+      },
+      defaultValue: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`,
+    },
+  }}
+  parameters={{ layout: 'centered' }}
+/>
+
+# Text
+
+Text component is the used to render text and paragraphs within an interface. It renders a `p` tag by default.
+
+## Props
+
+Any property of the [Chakra UI Text component](https://chakra-ui.com/docs/typography/text#props) can be used.
+
+## Examples
+
+### Default
+
+<Preview>
+  <Story name="Default">{args => <Text>{args.children}</Text>}</Story>
+</Preview>
+
+### Custom Properties
+
+<Preview>
+  <Story
+    name="Custom Properties"
+    argTypes={{
+      backgroundColor: {
+        control: {
+          type: 'color',
+        },
+      },
+      color: {
+        control: {
+          type: 'color',
+        },
+      },
+    }}
+    args={{
+      color: 'white',
+      backgroundColor: 'black',
+      fontSize: '40px',
+      noOfLines: 2,
+    }}
+  >
+    {args => <Text {...args}>{args.children}</Text>}
+  </Story>
+</Preview>

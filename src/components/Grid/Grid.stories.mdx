@@ -1,0 +1,107 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
+
+import Grid from '.'
+import GridItem from '../GridItem'
+import Container from '../Container'
+
+<Meta
+  title="UI Primitives/Grid"
+  component={Grid}
+  argTypes={{
+    children: {
+      table: {
+        disable: true,
+      },
+    },
+    templateColumns: {
+      control: 'text',
+    },
+    gap: {
+      control: 'text',
+    },
+    h: {
+      control: 'text',
+    },
+  }}
+  parameters={{ layout: 'centered' }}
+  decorators={[
+    Story => (
+      <div style={{ width: '95vw' }}>
+        <Story />
+      </div>
+    ),
+  ]}
+/>
+
+# Grid
+
+A primitive useful for grid layouts. Grid is Container with display: grid and it comes with helpful style shorthand. It renders a div element.
+
+## Props
+
+<ArgsTable of={Grid} />
+
+In addition, any property of the [Chakra UI Grid component](https://chakra-ui.com/docs/layout/grid#props) can be used.
+
+## Examples
+
+You can use `Grid` with any child components, here you can see an example using the `Container` component.
+
+<Canvas>
+  <Story
+    name="with Container"
+    argTypes={{
+      w: {
+        control: 'text',
+      },
+      bg: {
+        control: 'text',
+      },
+    }}
+    args={{
+      templateColumns: 'repeat(5, 1fr)',
+      gap: '6',
+      h: '10',
+      w: '100%',
+      bg: 'blue.500',
+    }}
+  >
+    {args => (
+      <Grid templateColumns={args.templateColumns} gap={args.gap} h={args.h}>
+        <Container w={args.w} bg={args.bg} />
+        <Container w={args.w} bg={args.bg} />
+        <Container w={args.w} bg={args.bg} />
+        <Container w={args.w} bg={args.bg} />
+        <Container w={args.w} bg={args.bg} />
+      </Grid>
+    )}
+  </Story>
+</Canvas>
+
+And here an example using `GridItem`, which allow us to use grid properties such as `colSpan` and `rowSpan`.
+
+<Canvas>
+  <Story
+    name="with GridItem"
+    argTypes={{
+      templateRows: {
+        control: 'text',
+      },
+    }}
+    args={{
+      h: '12.5rem',
+      templateRows: 'repeat(2, 1fr)',
+      templateColumns: 'repeat(5, 1fr)',
+      gap: '4',
+    }}
+  >
+    {args => (
+      <Grid {...args}>
+        <GridItem rowSpan={2} colSpan={1} bg="tomato" />
+        <GridItem colSpan={2} bg="papayawhip" />
+        <GridItem colSpan={2} bg="papayawhip" />
+        <GridItem colSpan={4} bg="tomato" />
+      </Grid>
+    )}
+  </Story>
+</Canvas>

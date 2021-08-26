@@ -1,0 +1,54 @@
+import { Meta, Preview, Story } from '@storybook/addon-docs'
+import { Box } from '@chakra-ui/react'
+
+import HStack from '.'
+
+<Meta
+  title="UI Primitives/HStack"
+  component={HStack}
+  argTypes={{
+    border: {
+      control: false,
+      defaultValue: '1px solid black',
+    },
+    p: {
+      control: false,
+      defaultValue: '1rem',
+    },
+    borderRadius: {
+      control: false,
+      defaultValue: '1rem',
+    },
+  }}
+  parameters={{ layout: 'centered' }}
+/>
+
+# HStack
+
+HStack is a layout component that makes it easy to HStack elements together and apply a space between them. It renders a `div` tag by default.
+
+## Props
+
+Any property of the [Chakra UI HStack component](https://chakra-ui.com/docs/layout/stack) can be used.
+
+## Examples
+
+### Default
+
+<Preview>
+  <Story name="Default">
+    {args => (
+      <HStack {...args}>
+        <Box borderRadius="5px" bg="yellow.200" p="5px">
+          Item 1
+        </Box>
+        <Box borderRadius="5px" bg="tomato" p="5px">
+          Item 2
+        </Box>
+        <Box borderRadius="5px" bg="pink.100" p="5px">
+          Item 3
+        </Box>
+      </HStack>
+    )}
+  </Story>
+</Preview>

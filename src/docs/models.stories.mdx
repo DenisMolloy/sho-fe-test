@@ -1,0 +1,52 @@
+import { Meta } from '@storybook/addon-docs'
+
+<Meta title="Docs/Models" />
+
+# Models
+
+## Product
+
+```js
+const product = {
+  name: 'My cool product',
+  slug: 'my-cool-product',
+  descriptionHtml: '<p>This is a cool product!</p>',
+  variants: [
+    {
+      _id: 'e28491e0-1278-4df2-849f-12d95807dd3f',
+      name: 'Small / Black',
+      storefrontId: '"Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0VmFyaWFudC8zODA1NTc0Mzc1MDMxNw=="',
+      price: 79,
+    },
+    {
+      _id: '13c4be06-4df6-49ea-965f-8f74dd465352',
+      name: 'Medium / Black',
+      storefrontId: '"Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0VmFyaWFudC8zODA1NTc0Mzc4MzA4NQ=="',
+      price: 89,
+    },
+  ],
+  media: [
+    {
+      _id: '',
+      details: {
+        name: 'My cool product image',
+        src: 'https://f.shgcdn.com/e110d9d9-5e84-40c3-a116-8d807774d900/',
+        alt: '',
+        width: 2048,
+        height: 1365,
+      },
+    },
+  ],
+}
+```
+
+## Collection of products
+
+```js
+const product = {
+  name: 'My cool collection',
+  slug: 'my-cool-collection',
+  descriptionHtml: '<p>This is a cool collection!</p>',
+  products: [{...}, {...}],
+}
+```

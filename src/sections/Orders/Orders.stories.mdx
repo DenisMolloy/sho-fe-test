@@ -1,0 +1,27 @@
+import { ArgsTable, Meta, Preview, Story } from '@storybook/addon-docs'
+
+import { getCustomerDecorator } from '../../lib/decorators'
+
+import Orders from '.'
+
+<Meta title="Sections/Orders" component={Orders} />
+
+# Orders
+
+The `Orders` section is responsible for showing the orders history or details of a single order. Internally it renders `OrdersHistory` or `OrderDetails` components.
+
+A single order is shown when the `order-id` parameter is present in the URL.
+
+## Props
+
+<ArgsTable of={Orders} />
+
+## Examples
+
+### Default
+
+<Preview>
+  <Story name="Default" decorators={[getCustomerDecorator('john@example.com')]}>
+    {args => <Orders {...args} />}
+  </Story>
+</Preview>

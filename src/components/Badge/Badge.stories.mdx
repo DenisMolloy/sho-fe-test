@@ -1,0 +1,97 @@
+import { Meta, Preview, Story, Container, ArgsTable } from '@storybook/addon-docs'
+
+import Badge from '.'
+import cart from './assets/cart.svg'
+
+<Meta
+  title="UI Primitives/Badge"
+  component={Badge}
+  argTypes={{
+    variant: {
+      control: {
+        type: 'select',
+        options: ['undefined', 'outline', 'solid', 'subtle', 'cart'],
+      },
+    },
+    containerProps: { control: null },
+    xOverhang: { control: 'text' },
+    yOverhang: { control: 'text' },
+    badgeContent: { control: 'text' },
+    children: { control: 'text' },
+  }}
+  parameters={{ layout: 'centered' }}
+/>
+
+# Badge
+
+This component is useful for displaying some children with a badge over them.
+
+## Props
+
+<ArgsTable of={Badge} />
+
+In addition, any property of the [Chakra UI Badge component](https://chakra-ui.com/docs/data-display/badge) can be used.
+
+## Examples
+
+### Default
+
+<Preview>
+  <Story
+    name="Default"
+    args={{
+      badgeContent: '23',
+      xOverhang: 2,
+      yOverhang: 3,
+      children: 'Lorem Ipsum...',
+    }}
+  >
+    {args => <Badge {...args}>{args.children}</Badge>}
+  </Story>
+</Preview>
+
+### Customized container
+
+<Preview>
+  <Story
+    name="Customized container"
+    args={{
+      badgeContent: 'Lorem',
+      xOverhang: 3,
+      yOverhang: 2,
+      backgroundColor: 'red',
+      color: 'white',
+      containerProps: { w: '10rem', variant: 'outline', centerContent: true },
+      children: 'Lorem Ipsum...',
+    }}
+  >
+    {args => <Badge {...args}>{args.children}</Badge>}
+  </Story>
+</Preview>
+
+### Cart
+
+<Preview>
+  <Story
+    name="Сart"
+    args={{
+      badgeContent: '23',
+      xOverhang: '12px',
+      yOverhang: '8px',
+      variant: 'cart',
+    }}
+    argTypes={{
+      children: {
+        control: {
+          type: null,
+        },
+      },
+    }}
+  >
+    {args => (
+      <Badge {...args}>
+        <img src={cart} width="30px" height="30px" role="presentation" />
+      </Badge>
+    )}
+  </Story>
+</Preview>

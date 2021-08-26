@@ -1,0 +1,21 @@
+import { ArgsTable, Meta, Preview, Story } from '@storybook/addon-docs'
+
+import LoginForm from '.'
+
+<Meta title="Components/LoginForm" component={LoginForm} parameters={{ layout: 'padded' }} />
+
+# LoginForm
+
+An application component that renders a fully functional form allowing users to login into your store.
+
+## Props
+
+<ArgsTable of={LoginForm} />
+
+## Examples
+
+### Default
+
+<Preview>
+  <Story name="Default">{args => <LoginForm {...args} />}</Story>
+</Preview>

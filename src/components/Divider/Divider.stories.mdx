@@ -1,0 +1,97 @@
+import { Meta, Preview, Story, Container, ArgsTable } from '@storybook/addon-docs'
+
+import Divider from '.'
+
+<Meta
+  title="UI Primitives/Divider"
+  component={Divider}
+  decorators={[
+    Story => (
+      <div style={{ padding: '1rem' }}>
+        <div style={{ padding: '1rem' }}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+          ut labore et dolore magna aliqua.
+        </div>
+        <Story />
+        <div style={{ padding: '1rem' }}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+          ut labore et dolore magna aliqua.
+        </div>
+      </div>
+    ),
+  ]}
+  parameters={{ layout: 'centered' }}
+/>
+
+# Divider
+
+This component is useful for separating content. It renders by default a `hr` tag.
+
+## Usage
+
+It can display a thin horizontal or vertical line.
+
+## Props
+
+<ArgsTable of={Divider} />
+
+In addition, any property of the [Chakra UI Divider component](https://chakra-ui.com/docs/data-display/divider) can be used.
+
+## Examples
+
+### Default
+
+<Preview>
+  <Story
+    name="Default"
+    parameters={{
+      docs: {
+        source: {
+          code: '<Divider />',
+        },
+      },
+    }}
+  >
+    {args => <Divider {...args} />}
+  </Story>
+</Preview>
+
+### Dashed
+
+<Preview>
+  <Story
+    name="Dashed"
+    args={{
+      variant: 'dashed',
+    }}
+    parameters={{
+      docs: {
+        source: {
+          code: '<Divider variant="dashed" />',
+        },
+      },
+    }}
+  >
+    {args => <Divider {...args} />}
+  </Story>
+</Preview>
+
+### Dotted
+
+<Preview>
+  <Story
+    name="Dotted"
+    args={{
+      variant: 'dotted',
+    }}
+    parameters={{
+      docs: {
+        source: {
+          code: '<Divider variant="dotted" />',
+        },
+      },
+    }}
+  >
+    {args => <Divider {...args} />}
+  </Story>
+</Preview>

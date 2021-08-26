@@ -1,0 +1,53 @@
+import { ArgsTable, Meta, Preview, Story } from '@storybook/addon-docs'
+
+import List from '.'
+import ListItem from '../ListItem'
+
+<Meta
+  title="UI Primitives/List"
+  component={List}
+  argTypes={{
+    children: {
+      table: {
+        disable: true,
+      },
+    },
+  }}
+  parameters={{ layout: 'centered' }}
+/>
+
+# List
+
+`List` renders a `ul` element that can wrap `ListItems` to render a list of items.
+
+## Props
+
+<ArgsTable of={List} />
+
+In addition, any property of the [Chakra UI List component](https://chakra-ui.com/docs/data-display/list#props) can be used.
+
+## Examples
+
+### Default
+
+<Preview>
+  <Story name="Default">
+    <List>
+      <ListItem>Free shipping + returns</ListItem>
+      <ListItem>Extended warranty</ListItem>
+      <ListItem>We’re here for you 24/7</ListItem>
+    </List>
+  </Story>
+</Preview>
+
+### List style - disc
+
+<Preview>
+  <Story name="List style - disc">
+    <List styleType="disc">
+      <ListItem>Free shipping + returns</ListItem>
+      <ListItem>Extended warranty</ListItem>
+      <ListItem>We’re here for you 24/7</ListItem>
+    </List>
+  </Story>
+</Preview>

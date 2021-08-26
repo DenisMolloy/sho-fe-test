@@ -1,0 +1,50 @@
+import { Meta, Preview, Story } from '@storybook/addon-docs'
+
+import Spinner from '.'
+
+<Meta title="UI Primitives/Spinner" component={Spinner} parameters={{ layout: 'centered' }} />
+
+# Spinners
+
+Spinners are used to provide visual feedback indicating that an action is still being processed.
+
+## Props
+
+Any property of the [Chakra UI Spinner component](https://chakra-ui.com/docs/feedback/spinner#props) can be used.
+
+## Examples
+
+### Default
+
+<Preview>
+  <Story name="Default">
+    <Spinner />
+  </Story>
+</Preview>
+
+### Using color
+
+<Preview>
+  <Story
+    name="Custom Properties"
+    argTypes={{
+      color: {
+        control: {
+          type: 'color',
+        },
+      },
+      size: {
+        control: {
+          type: 'select',
+          options: ['xs', 'sm', 'md', 'lg', 'xl'],
+        },
+      },
+    }}
+    args={{
+      color: 'orange',
+      size: 'xl',
+    }}
+  >
+    {args => <Spinner {...args} />}
+  </Story>
+</Preview>

@@ -1,0 +1,39 @@
+import { ArgsTable, Meta, Preview, Story } from '@storybook/addon-docs'
+
+import { theme } from 'Components/Theme'
+import SearchQueryInput from '.'
+
+<Meta
+  title="Components/SearchQueryInput"
+  component={SearchQueryInput}
+  argTypes={{
+    placeholder: {
+      control: 'text',
+    },
+    icon: {
+      control: {
+        type: null,
+      },
+    },
+    onSearchSubmit: {
+      action: 'Search submit',
+    },
+  }}
+  parameters={{ layout: 'centered' }}
+/>
+
+# SearchQueryInput
+
+**SearchQueryInput** component is an enhanced Input component which displays `Search` button inside itself.
+
+## Props
+
+<ArgsTable of={SearchQueryInput} />
+
+## Examples
+
+### Default
+
+<Preview>
+  <Story name="Default">{args => <SearchQueryInput {...args} icon={undefined} />}</Story>
+</Preview>

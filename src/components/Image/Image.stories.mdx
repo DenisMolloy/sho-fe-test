@@ -1,0 +1,148 @@
+import { ArgsTable, Meta, Preview, Story } from '@storybook/addon-docs'
+
+import Image from '.'
+
+<Meta
+  title="UI Primitives/Image"
+  component={Image}
+  argTypes={{
+    src: {
+      control: 'text',
+    },
+    srcSet: {
+      control: 'text',
+    },
+    alt: {
+      control: 'text',
+    },
+    loading: {
+      control: {
+        type: 'select',
+        options: ['lazy', 'eager', 'lazy-polyfill'],
+      },
+    },
+    format: {
+      control: {
+        type: 'select',
+        options: ['auto', 'webp', 'png', 'jpeg'],
+      },
+    },
+    quality: {
+      control: {
+        type: 'select',
+        options: ['lightest', 'lighter', 'normal', 'better', 'best', 'smart'],
+      },
+    },
+    htmlHeight: {
+      control: 'text',
+    },
+    htmlWidth: {
+      control: 'text',
+    },
+    sizes: {
+      control: 'text',
+    },
+    crop: {
+      control: 'text',
+    },
+  }}
+  parameters={{ layout: 'centered' }}
+/>
+
+# Image
+
+The Image component is used to display images. To work properly, the image must be within one of our CDN's valid url:
+
+- assets.frontend.shogun.dev
+- frontend.shgcdn.com
+- ucarecdn.com
+- f.shgcdn.com
+
+## Props
+
+<ArgsTable of={Image} />
+
+Internally Image renders [Chakra's `Img` component](https://chakra-ui.com/docs/media-and-icons/image#usage-with-ssr). Image accepts properties of the [native `img` element](https://html.spec.whatwg.org/multipage/embedded-content.html#the-img-element) and Chakra's `Box` properties.
+
+## Examples
+
+### Default
+
+<Preview>
+  <Story
+    name="Default"
+    argTypes={{
+      src: {
+        control: false,
+      },
+      srcSet: {
+        control: false,
+      },
+      alt: {
+        control: false,
+      },
+      loading: {
+        control: false,
+      },
+      format: {
+        control: false,
+      },
+      quality: {
+        control: false,
+      },
+      htmlHeight: {
+        control: false,
+      },
+      htmlWidth: {
+        control: false,
+      },
+      sizes: {
+        control: false,
+      },
+      crop: {
+        control: false,
+      },
+    }}
+  >
+    <Image
+      alt="Muylticolor flowers"
+      src="https://f.shgcdn.com/88e7aa7e-69b8-45e8-b60d-146f8ecf2e86/"
+    />
+  </Story>
+</Preview>
+
+### Sizes
+
+<Preview>
+  <Story
+    name="Sizes"
+    args={{
+      alt: 'Pineapple',
+      src: 'https://ucarecdn.com/22240276-2f06-41f8-9411-755c8ce926ed/',
+      format: 'png',
+      quality: 'lighter',
+      htmlHeight: '200',
+      htmlWidth: '400',
+      sizes: '400px',
+    }}
+  >
+    {args => <Image {...args} />}
+  </Story>
+</Preview>
+
+### Crop
+
+<Preview>
+  <Story
+    name="Crop"
+    args={{
+      alt: 'Pineapple',
+      src: 'https://ucarecdn.com/22240276-2f06-41f8-9411-755c8ce926ed/',
+      loading: 'eager',
+      quality: 'better',
+      crop: '250x400',
+    }}
+  >
+    {args => <Image {...args} />}
+  </Story>
+</Preview>

@@ -1,0 +1,27 @@
+{
+  "products": {},
+  "productVariants": {
+    "Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0VmFyaWFudC8zOTM0NTU4MTQ5MDM0NA==": {
+      "availableForSale": true
+    },
+    "Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0VmFyaWFudC8zOTM0NTUwMTIwODc0NA==": {
+      "availableForSale": false
+    },
+    "Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0VmFyaWFudC8zOTM0NTU4NzI1NzUxMg==": {
+      "availableForSale": true,
+      "minOrder": 2
+    },
+    "Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0VmFyaWFudC8zOTM0NTQzMzkzNjA0MA==": {
+      "availableForSale": true,
+      "maxOrder": 2
+    },
+    "Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0VmFyaWFudC8zOTM0NTU4NTk0Njc5Mg==": {
+      "availableForSale": true,
+      "minOrder": 5,
+      "maxOrder": 10
+    },
+    "Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0VmFyaWFudC8zOTM0NTU3NDc0MDEzNg==": {
+      "availableForSale": true
+    }
+  }
+}

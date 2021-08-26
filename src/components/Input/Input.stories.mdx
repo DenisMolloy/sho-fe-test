@@ -1,0 +1,39 @@
+import { ArgsTable, Meta, Preview, Story } from '@storybook/addon-docs'
+
+import Input from '.'
+
+<Meta
+  title="UI Primitives/Input"
+  component={Input}
+  argTypes={{
+    placeholder: 'text',
+    variant: {
+      control: {
+        type: 'select',
+        options: ['outline', 'unstyled', 'filled', 'flushed'],
+      },
+    },
+  }}
+  args={{
+    placeholder: 'Your email',
+  }}
+  parameters={{ layout: 'centered' }}
+/>
+
+# Input
+
+The Input component renders a text field. **Make sure to associate a label when using it.**
+
+## Props
+
+<ArgsTable of={Input} />
+
+In addition, any property of the [Chakra UI Input component](https://chakra-ui.com/docs/form/input#props) can be used.
+
+## Examples
+
+### Default
+
+<Preview>
+  <Story name="Default">{args => <Input {...args} />}</Story>
+</Preview>

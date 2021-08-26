@@ -1,0 +1,28 @@
+import { ArgsTable, Meta, Preview, Story } from '@storybook/addon-docs'
+
+import IconButton from '.'
+import Icon from '../Icon'
+
+<Meta
+  title="UI Primitives/IconButton"
+  component={IconButton}
+  argTypes={{ 'aria-label': { control: 'text' } }}
+  args={{ 'aria-label': 'Search on this website' }}
+  parameters={{ layout: 'centered' }}
+/>
+
+# IconButton
+
+## Props
+
+<ArgsTable of={IconButton} />
+
+In addition, any property of the [Chakra UI IconButton component](https://chakra-ui.com/docs/form/icon-button#props) can be used.
+
+## Examples
+
+### Default
+
+<Preview>
+  <Story name="Default">{args => <IconButton {...args} icon={<Icon icon="SearchIcon" />} />}</Story>
+</Preview>

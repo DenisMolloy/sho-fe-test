@@ -1,0 +1,45 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
+import LinkTo from '@storybook/addon-links/react'
+
+import Pagination from '.'
+
+<Meta
+  title="Components/Pagination"
+  component={Pagination}
+  argTypes={{
+    totalPages: {
+      control: {
+        type: 'number',
+      },
+    },
+    currentPage: {
+      control: {
+        type: 'number',
+      },
+    },
+    onPageChange: {
+      action: 'Update current page',
+    },
+  }}
+  parameters={{ layout: 'centered' }}
+/>
+
+# Pagination
+
+The `Pagination` component allows the user to select a specific page from a range of pages.
+
+## Usage
+
+`Pagination` accepts `totalPages` and displays a list of buttons for the user for easir access to multiple pages of data.
+
+## Props
+
+<ArgsTable of={Pagination} />
+
+## Examples
+
+### Default
+
+<Canvas>
+  <Story name="Default">{args => <Pagination {...args} totalPages={20} />}</Story>
+</Canvas>

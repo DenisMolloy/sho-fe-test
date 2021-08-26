@@ -1,0 +1,29 @@
+import { Meta, Preview, Story } from '@storybook/addon-docs'
+import OrderHistory from '.'
+import getDecorators from './decorators'
+
+<Meta title="Components/OrderHistory" parameters={{ layout: 'centered' }} />
+
+# OrderHistory
+
+The `OrderHistory` component is used to display the customer's orders history.
+
+## Examples
+
+### Default
+
+<Preview>
+  <Story
+    name="Default"
+    decorators={getDecorators('john@example.com')}
+    parameters={{
+      docs: {
+        source: {
+          code: '<OrderHistory orders={orders} />',
+        },
+      },
+    }}
+  >
+    <OrderHistory />
+  </Story>
+</Preview>

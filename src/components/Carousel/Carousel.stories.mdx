@@ -1,0 +1,137 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
+
+import Carousel from '.'
+
+<Meta title="Components/Carousel" component={Carousel} parameters={{ layout: 'centered' }} />
+
+# Carousel
+
+Carousel allows multiple images to be shown in a single coveted space. It has the main area where a big image is shown. Below the main area, it has the slider area where smaller images are shown. The slider area allows navigating through images.
+
+## Usage
+
+The most common use case is to display product images on a Product page.
+
+## Props
+
+<ArgsTable of={Carousel} />
+
+Where MediaItem is
+
+```ts
+interface MediaItem {
+  name: string
+  src: string
+  alt?: string
+  width: number
+  height: number
+}
+```
+
+## Examples
+
+### Single image
+
+<Canvas>
+  <Story name="Single image">
+    <Carousel
+      media={[
+        {
+          name: 'NOVEMBER_2014_SEAMLESS_SIDE_KENDA_WEB.jpg',
+          src: 'https://f.shgcdn.com/e110d9d9-5e84-40c3-a116-8d807774d900/',
+          alt: 'November - Fixed Gear Bicycle',
+          width: 2048,
+          height: 1365,
+        },
+      ]}
+    />
+    }
+  </Story>
+</Canvas>
+
+### Three images
+
+<Canvas>
+  <Story name="Three images">
+    <Carousel
+      media={[
+        {
+          name: 'NOVEMBER_2014_SEAMLESS_SIDE_KENDA_WEB.jpg',
+          src: 'https://f.shgcdn.com/e110d9d9-5e84-40c3-a116-8d807774d900/',
+          alt: 'November - Fixed Gear Bicycle',
+          width: 2048,
+          height: 1365,
+        },
+        {
+          name: 'KAR_20130629-4085.jpg',
+          src: 'https://f.shgcdn.com/fef93c9d-18d5-48bc-b80d-327fd87f90cf/',
+          alt: 'November - Fixed Gear Bicycle',
+          width: 2048,
+          height: 1357,
+        },
+        {
+          name: 'KAR_20130629-4074.jpg',
+          src: 'https://f.shgcdn.com/807c7f78-3088-41a6-b122-2d6c35407fe7/',
+          alt: 'November - Fixed Gear Bicycle',
+          width: 2048,
+          height: 1357,
+        },
+      ]}
+    />
+    }
+  </Story>
+</Canvas>
+
+### Six images
+
+<Canvas>
+  <Story name="Six images">
+    <Carousel
+      media={[
+        {
+          name: 'NOVEMBER_2014_SEAMLESS_SIDE_KENDA_WEB.jpg',
+          src: 'https://f.shgcdn.com/e110d9d9-5e84-40c3-a116-8d807774d900/',
+          alt: 'November - Fixed Gear Bicycle',
+          width: 2048,
+          height: 1365,
+        },
+        {
+          name: 'KAR_20130629-4085.jpg',
+          src: 'https://f.shgcdn.com/fef93c9d-18d5-48bc-b80d-327fd87f90cf/',
+          alt: 'November - Fixed Gear Bicycle',
+          width: 2048,
+          height: 1357,
+        },
+        {
+          name: 'KAR_20130629-4074.jpg',
+          src: 'https://f.shgcdn.com/807c7f78-3088-41a6-b122-2d6c35407fe7/',
+          alt: 'November - Fixed Gear Bicycle',
+          width: 2048,
+          height: 1357,
+        },
+        {
+          name: 'KAR_20130629-4082.jpg',
+          src: 'https://f.shgcdn.com/0b9113d7-6a72-4ff8-a6bd-373fc56c6df9/',
+          alt: 'November - Fixed Gear Bicycle',
+          width: 2048,
+          height: 1356,
+        },
+        {
+          name: 'KAR_20130629-4062.jpg',
+          src: 'https://f.shgcdn.com/a2e2e44d-6c02-4b79-b4a3-62f9f52bcd37/',
+          alt: 'November - Fixed Gear Bicycle',
+          width: 2048,
+          height: 1356,
+        },
+        {
+          name: 'KAR_20130629-4067.jpg',
+          src: 'https://f.shgcdn.com/c99d999a-7f28-4c0b-8234-b2d0c35c3b12/',
+          alt: 'November - Fixed Gear Bicycle',
+          width: 2048,
+          height: 1356,
+        },
+      ]}
+    />
+    }
+  </Story>
+</Canvas>

@@ -1,0 +1,38 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
+import LinkTo from '@storybook/addon-links/react'
+
+import { shopifyProducts, bigCommerceProducts } from '../../lib/mocks'
+
+import ProductBox from '.'
+
+<Meta title="Sections/ProductBox" component={ProductBox} />
+
+# ProductBox
+
+The `ProductBox` section is a composable component that shows a detailed view of a product and allows the user to buy the product by clicking on the `Add to Cart` button.
+
+## Usage
+
+`ProductBox` accepts a `product` prop which is an object holding product data. See a product example on the <LinkTo kind="docs-models--page#product">**Models page**</LinkTo>.
+
+## Props
+
+<ArgsTable of={ProductBox} />
+
+## Examples
+
+### Shopify
+
+<Canvas>
+  <Story name="Shopify">
+    <ProductBox product={shopifyProducts[0]} />
+  </Story>
+</Canvas>
+
+### BigCommerce
+
+<Canvas>
+  <Story name="BigCommerce">
+    <ProductBox product={bigCommerceProducts[0]} />
+  </Story>
+</Canvas>

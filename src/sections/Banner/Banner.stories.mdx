@@ -1,0 +1,49 @@
+import { ArgsTable, Meta, Preview, Story } from '@storybook/addon-docs'
+
+import { collection } from '../../lib/mocks'
+import Banner from '.'
+
+<Meta
+  title="Sections/Banner"
+  component={Banner}
+  argTypes={{
+    title: {
+      control: 'text',
+    },
+    titleX: {
+      control: {
+        type: 'text',
+      },
+    },
+    titleY: {
+      control: {
+        type: 'text',
+      },
+    },
+  }}
+  parameters={{ layout: 'padded' }}
+/>
+
+# Banner
+
+The Banner component is used to create a header 'h1' element with a backgroundImage.
+
+## Props
+
+<ArgsTable of={Banner} />
+
+### Default
+
+<Canvas>
+  <Story
+    name="Default"
+    args={{
+      image: collection.image,
+      title: 'Bikes',
+      titleX: 'right',
+      titleY: 'bottom',
+    }}
+  >
+    {args => <Banner {...args}></Banner>}
+  </Story>
+</Canvas>

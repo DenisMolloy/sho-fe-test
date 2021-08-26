@@ -1,0 +1,35 @@
+import { ArgsTable, Meta, Preview, Story } from '@storybook/addon-docs'
+
+import { menu as mockMenu } from '../../lib/mocks'
+
+import Menu from '.'
+
+<Meta title="Components/Menu" component={Menu} parameters={{ layout: 'padded' }} />
+
+# Menu
+
+This component displays an accessible dropdown menu that can be used to organize a set of website's navigation links.
+
+## Props
+
+<ArgsTable of={Menu} />
+
+In addition, any property of the [Chakra UI Menu component](https://chakra-ui.com/docs/data-display/Menu) can be used.
+
+## Examples
+
+### Links
+
+<Preview>
+  <Story name="Links">
+    <Menu links={mockMenu.menuLinks} />
+  </Story>
+</Preview>
+
+### Links and custom message
+
+<Preview>
+  <Story name="Links and custom message">
+    <Menu content="Here is the custom content" links={mockMenu.menuLinks} />
+  </Story>
+</Preview>

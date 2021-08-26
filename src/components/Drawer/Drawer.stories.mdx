@@ -1,0 +1,89 @@
+import { Meta, Preview, Story } from '@storybook/addon-docs'
+
+import Drawer from '.'
+
+<Meta
+  title="UI Primitives/Drawer"
+  component={Drawer}
+  argTypes={{
+    children: 'text',
+    header: 'text',
+    footer: 'text',
+    isOpen: 'boolean',
+    placement: {
+      control: {
+        type: 'select',
+        options: ['top', 'right', 'bottom', 'left'],
+      },
+    },
+    size: {
+      control: {
+        type: 'select',
+        options: ['xs', 'sm', 'md', 'lg', 'xl', 'full'],
+      },
+    },
+  }}
+  args={{
+    children: 'Lorem Ipsum is simply dummy text',
+    isOpen: true,
+    placement: 'right',
+    size: 'xs',
+  }}
+  parameters={{ layout: 'centered' }}
+/>
+
+# Drawer
+
+Drawer component is a panel that slides out from the edge of the screen.
+
+## Props
+
+Any property of the [Chakra UI Drawer component](https://chakra-ui.com/docs/overlay/drawer#props) can be used.
+
+## Examples
+
+### Default
+
+<Preview>
+  <Story
+    name="Default"
+    argTypes={{
+      header: {
+        table: {
+          disable: true,
+        },
+      },
+      footer: {
+        table: {
+          disable: true,
+        },
+      },
+      placement: {
+        table: {
+          disable: true,
+        },
+      },
+      size: {
+        table: {
+          disable: true,
+        },
+      },
+    }}
+  >
+    {args => <Drawer {...args}>{args.children}</Drawer>}
+  </Story>
+</Preview>
+
+### Custom Properties
+
+<Preview>
+  <Story
+    name="Custom Properties"
+    args={{
+      header: 'My header',
+      footer: 'My footer',
+    }}
+  >
+    {args => <Drawer {...args}>{args.children}</Drawer>}
+  </Story>
+</Preview>

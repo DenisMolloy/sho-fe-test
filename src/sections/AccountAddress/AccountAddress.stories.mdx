@@ -1,0 +1,33 @@
+import { ArgsTable, Meta, Preview, Story } from '@storybook/addon-docs'
+
+import { getCustomerDecorator } from '../../lib/decorators'
+
+import AccountAddress from '.'
+
+<Meta title="Sections/AccountAddress" component={AccountAddress} />
+
+# Header
+
+This section is used to edit a customer's address.
+
+## Props
+
+<ArgsTable of={AccountAddress} />
+
+## Examples
+
+### Create
+
+<Preview>
+  <Story name="Create" decorators={[getCustomerDecorator('john@example.com')]}>
+    {args => <AccountAddress {...args} />}
+  </Story>
+</Preview>
+
+### Unauthenticated
+
+<Preview>
+  <Story name="Unauthenticated" decorators={[getCustomerDecorator()]}>
+    {args => <AccountAddress {...args} />}
+  </Story>
+</Preview>

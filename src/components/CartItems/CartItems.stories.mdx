@@ -1,0 +1,49 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
+
+import CartItems from '.'
+import { getCartDecorator } from '../../lib/decorators'
+
+<Meta title="Components/CartItems" component={CartItems} parameters={{ layout: 'centered' }} />
+
+# CartItems
+
+CartItems component displays items in the cart.
+It allows a customer to proceed to Checkout or to navigate to products (continue shopping).
+
+## Usage
+
+This component doesn't accept any props. It takes items from the cart context, using `useCartState` hook from `frontend-checkout`.
+
+## Examples
+
+### Default
+
+<Canvas>
+  <Story name="Default" decorators={[getCartDecorator(0)]}>
+    <CartItems />
+  </Story>
+</Canvas>
+
+### Single item
+
+<Canvas>
+  <Story name="1 item" decorators={[getCartDecorator(1)]}>
+    <CartItems />
+  </Story>
+</Canvas>
+
+### Three items
+
+<Canvas>
+  <Story name="3 items" decorators={[getCartDecorator(3)]}>
+    <CartItems />
+  </Story>
+</Canvas>
+
+### Six items
+
+<Canvas>
+  <Story name="6 items" decorators={[getCartDecorator(6)]}>
+    <CartItems />
+  </Story>
+</Canvas>

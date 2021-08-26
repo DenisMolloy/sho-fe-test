@@ -1,0 +1,46 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
+import LinkTo from '@storybook/addon-links/react'
+
+import { shopifyProducts, bigCommerceProducts } from '../../lib/mocks'
+import ProductGridItem from '.'
+import List from '../List'
+
+<Meta
+  title="Components/ProductGridItem"
+  component={ProductGridItem}
+  parameters={{ layout: 'centered' }}
+/>
+
+# ProductGridItem
+
+The `ProductGridItem` is used internally in the `ProductGrid` component and it renders a product card.
+
+## Usage
+
+`ProductGridItem` accepts a single `product` to display. See a product example on the <LinkTo kind="docs-models--page#product">**_Models page_**</LinkTo>.
+
+## Props
+
+<ArgsTable of={ProductGridItem} />
+
+## Examples
+
+### Shopify
+
+<Canvas>
+  <Story name="Shopify">
+    <List style={{ width: '320px', height: '320px' }}>
+      <ProductGridItem product={shopifyProducts[0]} />
+    </List>
+  </Story>
+</Canvas>
+
+### BigCommerce
+
+<Canvas>
+  <Story name="BigCommerce">
+    <List style={{ width: '320px', height: '320px' }}>
+      <ProductGridItem product={bigCommerceProducts[0]} />
+    </List>
+  </Story>
+</Canvas>

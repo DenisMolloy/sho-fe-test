@@ -1,0 +1,21 @@
+import { Meta, Preview, Story } from '@storybook/addon-docs'
+
+import { getCustomerDecorator } from '../../lib/decorators'
+
+import ResetForm from '.'
+
+<Meta title="Sections/ResetForm" component={ResetForm} />
+
+# ResetForm
+
+A section that allows users to define a new password.
+
+## Examples
+
+### Default
+
+<Preview>
+  <Story name="Default" decorators={[getCustomerDecorator()]}>
+    <ResetForm />
+  </Story>
+</Preview>

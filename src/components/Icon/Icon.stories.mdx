@@ -1,0 +1,111 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
+import { AiFillCustomerService } from 'react-icons/ai'
+import { BsFillAlarmFill } from 'react-icons/bs'
+import { FaFortAwesomeAlt } from 'react-icons/fa'
+
+import decorators from './decorators'
+
+import Icon from '.'
+
+<Meta title="UI Primitives/Icon" component={Icon} parameters={{ layout: 'centered' }} />
+
+# Icon
+
+Icon component is used to display icons. Behind the scenes it uses `@chakra-ui/icons` library.
+
+## Usage
+
+Specify the icon name as prop to render specific icon.
+
+## Props
+
+<ArgsTable of={Icon} />
+
+In addition, any property of the [Chakra UI Icon component](https://chakra-ui.com/docs/media-and-icons/icon#using-chakra-ui-icons) can be used to customize size, colors and other styles.
+
+## Examples
+
+### Fallback icon
+
+Without any `props` it renders a fallback icon.
+
+<Canvas>
+  <Story name="Fallback icon">
+    <Icon />
+  </Story>
+</Canvas>
+
+### Default style
+
+Icon with default styles.
+
+<Canvas>
+  <Story name="Default style" args={{ icon: 'CheckCircleIcon' }} decorators={[]}>
+    {args => <Icon {...args}></Icon>}
+  </Story>
+</Canvas>
+
+### Custom sizes
+
+Icons of different sizes.
+
+<Canvas>
+  <Story name="Custom sizes" decorators={decorators}>
+    <Icon icon="CheckCircleIcon" size="sm" />
+    <Icon icon="CheckCircleIcon" size="md" />
+    <Icon icon="CheckCircleIcon" size="lg" />
+  </Story>
+</Canvas>
+
+### Custom colors
+
+Icons of different colors.
+
+<Canvas>
+  <Story name="Custom colors" decorators={decorators}>
+    <Icon icon="CheckCircleIcon" color="red" />
+    <Icon icon="CheckCircleIcon" color="blue" />
+    <Icon icon="CheckCircleIcon" color="green" />
+  </Story>
+</Canvas>
+
+### Custom icons library
+
+Icons from external libraries.
+
+<Canvas>
+  <Story
+    name="Custom icons"
+    decorators={decorators}
+    parameters={{
+      docs: {
+        source: {
+          code: `
+import { AiFillCustomerService } from 'react-icons/ai'
+import { BsFillAlarmFill } from 'react-icons/bs'
+import { FaFortAwesomeAlt } from 'react-icons/fa'
+...
+<Icon as={AiFillCustomerService} />
+<Icon as={BsFillAlarmFill} />
+<Icon as={FaFortAwesomeAlt} />`,
+        },
+      },
+    }}
+  >
+    <Icon as={AiFillCustomerService} />
+    <Icon as={BsFillAlarmFill} />
+    <Icon as={FaFortAwesomeAlt} />
+  </Story>
+</Canvas>
+
+### Custom svg icon
+
+Inline svg icons.
+
+<Canvas>
+  <Story name="Custom svg" decorators={decorators}>
+    <Icon viewBox="0 0 72 72" stroke="red" fill="red">
+      <path d="M1,21c0,21,31,38,31,38s31-18,31-38c0-8.285-6-15-15-16c-8.285,0-16,5.715-16,14c0-8.282-7.715-14-16-14C7,5,1,12.714,1,21z" />
+    </Icon>
+  </Story>
+</Canvas>

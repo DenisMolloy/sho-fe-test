@@ -1,0 +1,67 @@
+import { ArgsTable, Meta, Preview, Story } from '@storybook/addon-docs'
+
+import AddToCartButton from '.'
+import buttonDecorator from '../Button/decorators'
+import { getCartDecorator } from '../../lib/decorators'
+
+<Meta
+  title="Components/Add To Cart Button"
+  component={AddToCartButton}
+  decorators={[getCartDecorator(1), buttonDecorator]}
+  parameters={{ layout: 'centered' }}
+/>
+
+# Add To Cart Button
+
+The `AddToCartButton` component is an Application Component that can be used on any section that receives a product variable.
+
+## Props
+
+<ArgsTable of={AddToCartButton} />
+
+In addition, any property of the [Button component](/?path=/story/components-button--default-story) can be used.
+
+## Examples
+
+### Default
+
+<Preview>
+  <Story name="Default">{args => <AddToCartButton {...args} />}</Story>
+</Preview>
+
+### Custom Properties
+
+<Preview>
+  <Story
+    name="Custom Properties"
+    argTypes={{
+      availableForSaleText: {
+        control: {
+          type: 'text',
+        },
+      },
+      isFullWidth: {
+        control: {
+          type: 'boolean',
+        },
+      },
+      outOfStockText: {
+        control: {
+          type: 'text',
+        },
+      },
+      productId: {
+        table: {
+          disable: true,
+        },
+      },
+    }}
+    args={{
+      availableForSaleText: 'Add to bag',
+      isFullWidth: false,
+      outOfStockText: 'Out of stock',
+    }}
+  >
+    {args => <AddToCartButton {...args} />}
+  </Story>
+</Preview>

@@ -1,0 +1,8 @@
+config/*
+src/lib/built-in/*
+src/lib/UploadCareWidget/*
+seeder
+scripts
+dist/
+static/
+!.storybook

@@ -1,0 +1,74 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
+
+import Container from '.'
+
+<Meta
+  title="UI Primitives/Container"
+  component={Container}
+  argTypes={{
+    centerContent: { control: 'boolean' },
+    constrainContent: { control: 'boolean' },
+    children: {
+      control: 'text',
+      defaultValue: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`,
+    },
+  }}
+  parameters={{ layout: 'centered' }}
+/>
+
+# Container
+
+Container is the most abstract component on top of which many other components are built.
+It renders a `div` element by default.
+
+Behind the scenes it uses [Box](https://chakra-ui.com/docs/layout/box) or [Container](https://chakra-ui.com/docs/layout/container) components from **Chakra-UI** depending on the passed props.
+
+## Usage
+
+Container is useful in the following common cases:
+
+- Create visual block with/without background/border
+- Create responsive layouts
+- Create a visual block with constrained content
+- Provide a shorthand way to pass styles via props (`bg` instead of `backgroundColor`).
+- Compose new component and allow for override using the `as` prop
+
+## Props
+
+<ArgsTable of={Container} />
+
+In addition, any property of the [Chakra UI Box component](https://chakra-ui.com/docs/layout/box) and [Chakra UI Container component](https://chakra-ui.com/docs/layout/container) can be used.
+
+## Examples
+
+### Default
+
+Without any `props` it renders a `div` element with transparent background.
+
+<Canvas>
+  <Story name="default">{args => <Container {...args}></Container>}</Story>
+</Canvas>
+
+### Solid
+
+Container with solid background.
+
+<Canvas>
+  <Story
+    name="solid"
+    argTypes={{ backgroundColor: { control: 'text' } }}
+    args={{ variant: 'solid' }}
+  >
+    {args => <Container {...args}></Container>}
+  </Story>
+</Canvas>
+
+### Outline
+
+Container with solid background and border.
+
+<Canvas>
+  <Story name="outline" args={{ variant: 'outline' }}>
+    {args => <Container {...args}></Container>}
+  </Story>
+</Canvas>

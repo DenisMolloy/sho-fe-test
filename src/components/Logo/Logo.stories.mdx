@@ -1,0 +1,61 @@
+import { ArgsTable, Meta, Preview, Story } from '@storybook/addon-docs'
+
+import { shopifyProducts } from '../../lib/mocks'
+import Logo from '.'
+const logoImage = shopifyProducts[3].media[0].details
+
+<Meta title="Components/Logo" component={Logo} parameters={{ layout: 'centered' }} />
+
+# Logo
+
+The Logo component is used to add an image as a logo to the website that can be linked to the homepage or any url.
+
+## Props
+
+<ArgsTable of={Logo} />
+
+## Examples
+
+### Default
+
+<Preview>
+  <Story name="Default">
+    <Logo />
+  </Story>
+</Preview>
+
+### Custom image
+
+<Preview>
+  <Story name="Custom image">
+    <Logo image={logoImage} />
+  </Story>
+</Preview>
+
+### Custom link
+
+<Preview>
+  <Story
+    name="Custom link"
+    argTypes={{
+      image: {
+        table: {
+          disable: true,
+        },
+      },
+      link: {
+        control: {
+          type: 'text',
+        },
+        table: {
+          disable: false,
+        },
+      },
+    }}
+    args={{
+      link: '/my-homepage',
+    }}
+  >
+    {args => <Logo link={args.link} />}
+  </Story>
+</Preview>

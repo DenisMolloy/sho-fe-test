@@ -1,0 +1,28 @@
+import { ArgsTable, Meta, Preview, Story } from '@storybook/addon-docs'
+
+import NumberInput from '.'
+
+<Meta title="Components/NumberInput" component={NumberInput} parameters={{ layout: 'centered' }} />
+
+# NumberInput
+
+**NumberInput** component is an enhanced Input component which allows changing the value by clicking "-" and "+" buttons.
+
+## Props
+
+<ArgsTable of={NumberInput} />
+
+In addition, any [Chakra UI NumberInput component](https://chakra-ui.com/docs/form/number-input) property can be used.
+
+## Examples
+
+### Default
+
+<Preview>
+  <Story name="Default">
+    <NumberInput
+      inputProps={{ 'aria-label': 'Quantity', size: 'sm', w: '16' }}
+      buttonProps={{ size: 'sm' }}
+    />
+  </Story>
+</Preview>

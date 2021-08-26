@@ -1,0 +1,77 @@
+import { ArgsTable, Meta, Preview, Story } from '@storybook/addon-docs'
+
+import Button from '.'
+import buttonDecorator from './decorators'
+
+<Meta
+  title="UI Primitives/Button"
+  component={Button}
+  argTypes={{
+    variant: {
+      control: {
+        type: 'select',
+        options: [
+          'undefined',
+          'primary',
+          'secondary',
+          'link',
+          'outline',
+          'ghost',
+          'solid',
+          'unstyled',
+        ],
+      },
+    },
+    children: 'text',
+    isLoading: 'boolean',
+    isFullWidth: 'text',
+  }}
+  args={{
+    children: 'Add to Cart',
+    isLoading: false,
+  }}
+  parameters={{ layout: 'centered' }}
+  decorators={[buttonDecorator]}
+/>
+
+# Button
+
+The Button component represents a clickable button, used to submit forms or anywhere in a document for accessible, standard button functionality.
+
+## Props
+
+<ArgsTable of={Button} />
+
+In addition, any property of the [Chakra UI Button component](https://chakra-ui.com/docs/form/button#props) can be used.
+
+## Examples
+
+### Default
+
+<Preview>
+  <Story
+    name="Default"
+    argTypes={{
+      isFullWidth: {
+        table: {
+          disable: true,
+        },
+      },
+    }}
+  >
+    {args => <Button {...args}>{args.children}</Button>}
+  </Story>
+</Preview>
+
+### Full width
+
+<Preview>
+  <Story
+    name="Full width"
+    args={{
+      isFullWidth: true,
+    }}
+  >
+    {args => <Button {...args}>{args.children}</Button>}
+  </Story>
+</Preview>
