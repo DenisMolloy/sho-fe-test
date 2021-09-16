@@ -6,3 +6,5 @@ export default {
   title: 'Sections/BlogPost',
   component: BlogPost,
 }
+
+export const Basic = () => <BlogPost />

@@ -1,0 +1,35 @@
+import { Meta, Preview, Story } from '@storybook/addon-docs'
+
+import BlogPost from '.'
+
+<Meta title="Sections/BlogPost" component={BlogPost} />
+
+# BlogPost
+
+The BlogPost component is used to display the contents of a blogpost.
+
+## Props
+
+None.
+
+### Default
+
+<Preview>
+  <Story
+    name="Default"
+    args={{
+      name: 'placeholder name',
+      title: 'placeholder title',
+      sport: 'placeholder sport',
+      summary:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      author: 'placeholder author',
+      authorImage: 'https://via.placeholder.com/200x200',
+      createdDate: '7.9.21',
+      heroImage: 'https://via.placeholder.com/1240x500',
+      content: '',
+    }}
+  >
+    {args => <BlogPost {...args} />}
+  </Story>
+</Preview>
