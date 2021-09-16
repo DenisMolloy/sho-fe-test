@@ -6,10 +6,10 @@ import Text from 'Components/Text'
 import './styles.css'
 
 const BlogIntroCard = (props) => {
-  
   if(props && Object.keys(props).length === 0) return
 
   const {title, sport, author, authorImage, createdDate, summary} = props
+
   return (
     <Container 
       className="blog-intro-container"
