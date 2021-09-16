@@ -1,0 +1,33 @@
+import { Meta, Preview, Story } from '@storybook/addon-docs'
+
+import BlogIntroCard from '.'
+
+<Meta title="Components/BlogIntroCard" component={BlogIntroCard} />
+
+# BlogIntroCard
+
+The BlogIntroCard displays an overview of the blog post and the author.
+
+## Props
+
+None.
+
+### Default
+
+<Preview>
+  <Story
+    name="Default"
+    args={{
+      name: 'placeholder name',
+      title: 'placeholder title',
+      sport: 'placeholder sport',
+      authorImage: 'https://via.placeholder.com/200x200',
+      summary:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      author: 'placeholder author',
+      createdDate: '7.9.21',
+    }}
+  >
+    {args => <BlogIntroCard {...args} />}
+  </Story>
+</Preview>
