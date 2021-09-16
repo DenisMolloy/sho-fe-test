@@ -8,7 +8,7 @@ import exampleRichText from './exampleRichText'
 import './styles.css'
 
 const BlogPost = (blogPost = {}) => {
-  if(blogPost && Object.keys(blogPost).length === 0) return
+  if(blogPost && Object.keys(blogPost).length === 0) return "No props passed"
 
   const { heroImage, content } = blogPost
 

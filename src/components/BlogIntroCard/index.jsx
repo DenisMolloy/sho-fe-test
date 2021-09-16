@@ -6,7 +6,7 @@ import Text from 'Components/Text'
 import './styles.css'
 
 const BlogIntroCard = (props) => {
-  if(props && Object.keys(props).length === 0) return
+  if(props && Object.keys(props).length === 0) return "No props passed"
 
   const {title, sport, author, authorImage, createdDate, summary} = props
 
