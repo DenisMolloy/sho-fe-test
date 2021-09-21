@@ -6,7 +6,7 @@ import './styles.css'
 
 const BlogPost = ({ blogPost }) => {
   console.log('this is blogPost: ', blogPost)
-  if (blogPost && Object.keys(blogPost).length === 0) return 'No props passed'
+  if (blogPost === null) return 'No props passed'
 
   const { content } = blogPost
 
