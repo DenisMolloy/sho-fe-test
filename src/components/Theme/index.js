@@ -27,6 +27,7 @@ import { extendTheme, theme as defaultTheme } from '@chakra-ui/react'
 const colors = {
   black: '#000000',
   white: '#FFFFFF',
+  green: '#8dc641',
   gray: {
     900: '#444444',
     800: '#666666',
