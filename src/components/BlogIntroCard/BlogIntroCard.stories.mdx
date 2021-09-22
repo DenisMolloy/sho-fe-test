@@ -1,4 +1,4 @@
-import { Meta, Preview, Story } from '@storybook/addon-docs'
+import { ArgsTable, Meta, Preview, Story } from '@storybook/addon-docs'
 
 import BlogIntroCard from '.'
 
@@ -6,11 +6,13 @@ import BlogIntroCard from '.'
 
 # BlogIntroCard
 
-The BlogIntroCard displays an overview of the blog post and the author.
+The `BlogIntroCard` Component displays an overview of the blog post and the author and requires data from a `Blog` content object.
+
+`BlogIntroCard` should be used at the top of a `BlogPost` Section.
 
 ## Props
 
-None.
+<ArgsTable of={BlogIntroCard} />
 
 ### Default
 
