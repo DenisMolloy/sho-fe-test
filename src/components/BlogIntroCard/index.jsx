@@ -2,13 +2,13 @@ import React from 'react'
 import ResponsiveImage from 'frontend-ui/ResponsiveImage'
 import Container from 'Components/Container'
 import Icon from 'Components/Icon'
-import { ImFacebook2, ImTwitter, ImPinterest, ImPrinter, ImInstagram } from 'react-icons/im'
-import { MdEmail } from 'react-icons/md'
 import Flex from 'Components/Flex'
 import Link from 'Components/Link'
 import Heading from 'Components/Heading'
 import Text from 'Components/Text'
-import './styles.css'
+import { ImFacebook2, ImTwitter, ImPinterest, ImPrinter, ImInstagram } from 'react-icons/im'
+import { MdEmail } from 'react-icons/md'
+// import './styles.css'
 
 const blogIntroStyles = {
   container: {
@@ -21,17 +21,20 @@ const blogIntroStyles = {
     width: 145,
     marginBottom: 18,
   },
-  heroImage: {
-    width: '100%',
-  },
 }
 
 const BlogIntroCard = props => {
-  if (props && Object.keys(props).length === 0) return 'No props passed'
-  const { title, sport, author, authorImage, createdDate, summary, heroImage } = props
+  if (props && Object.keys(props).length === 0) return null
+  const { title, sport, author, authorImage, createdDate, summary, heroImage } = props || {}
 
   return (
-    <Container>
+    <Container
+      height={{
+        lg: 650,
+        md: 950,
+        base: 1050,
+      }}
+    >
       <Container
         height="400px"
         width="100vw"
@@ -41,22 +44,17 @@ const BlogIntroCard = props => {
         backgroundSize="cover"
       ></Container>
       <Container
-        // className="blog-intro-container"
         variant="solid"
         display="flex"
         flexWrap="wrap"
         justifyContent="center"
         margin="auto"
-        // padding="30px 50px"
-        px={8}
         width={{
           lg: '65%',
-          sm: '90%',
+          base: '90%',
         }}
         position="relative"
         top="-170px"
-        // bg="black"
-        // backgroundColor="black"
         style={blogIntroStyles.container}
       >
         {/* Left Blog Summary */}
@@ -135,7 +133,6 @@ const BlogIntroCard = props => {
           top={{ lg: '-55px', md: '10px', base: '10px' }}
           mt={{ lg: '0px', md: '20px', base: '20px' }}
           mb={{ lg: '0px', md: '20px', base: '20px' }}
-          // style={blogIntroStyles.authorSummary}
         >
           <ResponsiveImage
             src={authorImage.src || ''}
@@ -143,9 +140,6 @@ const BlogIntroCard = props => {
             width={authorImage.width || 100}
             height={authorImage.height || 100}
             style={blogIntroStyles.authorSummaryImage}
-            // borderRadius="md"
-            // width={authorImage.width}
-            // mb={4}
           />
           <Flex justifyContent="center">
             <Text
@@ -169,6 +163,7 @@ const BlogIntroCard = props => {
           <Link
             href="https://kokatat.com/team/sage-donnelly"
             target="_blank"
+            rel="noreferrer noopener"
             mb="25px"
             textTransform="uppercase"
             fontSize="sm"
