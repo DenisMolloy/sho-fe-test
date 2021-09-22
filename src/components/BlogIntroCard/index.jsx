@@ -35,7 +35,7 @@ const BlogIntroCard = props => {
       <Container
         height="400px"
         width="100vw"
-        backgroundImage={`url(${heroImage})`}
+        backgroundImage={`url(${heroImage.src || ''})`}
         backgroundPosition="center"
         backgroundRepeat="no-repeat"
         backgroundSize="cover"
@@ -137,8 +137,8 @@ const BlogIntroCard = props => {
           mb={{ lg: '0px', md: '20px', base: '20px' }}
           // style={blogIntroStyles.authorSummary}
         >
-          {/* <ResponsiveImage
-            src={authorImage}
+          <ResponsiveImage
+            src={authorImage.src || ''}
             alt={authorImage.alt || ''}
             width={authorImage.width || 100}
             height={authorImage.height || 100}
@@ -146,7 +146,7 @@ const BlogIntroCard = props => {
             // borderRadius="md"
             // width={authorImage.width}
             // mb={4}
-          /> */}
+          />
           <Flex justifyContent="center">
             <Text
               color="green"
