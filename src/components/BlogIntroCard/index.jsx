@@ -8,14 +8,10 @@ import Heading from 'Components/Heading'
 import Text from 'Components/Text'
 import { ImFacebook2, ImTwitter, ImPinterest, ImPrinter, ImInstagram } from 'react-icons/im'
 import { MdEmail } from 'react-icons/md'
+import Divider from 'Components/Divider'
 // import './styles.css'
 
 const blogIntroStyles = {
-  container: {
-    backgroundColor: 'black',
-    color: 'white',
-    padding: '30px 50px',
-  },
   authorSummaryImage: {
     borderRadius: '50%',
     width: 145,
@@ -30,32 +26,33 @@ const BlogIntroCard = props => {
   return (
     <Container
       height={{
-        lg: 650,
-        md: 950,
-        base: 1050,
+        lg: 630,
+        md: 935,
+        base: 970,
       }}
     >
       <Container
-        height="400px"
-        width="100vw"
+        height={{ lg: '400px', md: '250px', base: '125px' }}
+        width={{ lg: '99vw', md: '98vw', base: '96.4vw' }}
         backgroundImage={`url(${heroImage.src || ''})`}
         backgroundPosition="center"
         backgroundRepeat="no-repeat"
         backgroundSize="cover"
       ></Container>
       <Container
-        variant="solid"
         display="flex"
         flexWrap="wrap"
         justifyContent="center"
         margin="auto"
+        p={{ lg: '30px 50px', base: '30px 30px' }}
+        bgColor="black"
+        color="white"
         width={{
           lg: '65%',
           base: '90%',
         }}
         position="relative"
-        top="-170px"
-        style={blogIntroStyles.container}
+        top={{ lg: '-170px', md: '-65px', base: '0px' }}
       >
         {/* Left Blog Summary */}
         <Container flexBasis={{ lg: '70%', base: '100%' }}>
@@ -90,13 +87,7 @@ const BlogIntroCard = props => {
                 cursor="pointer"
                 _hover={{ color: 'green' }}
               />
-              <Icon
-                as={MdEmail}
-                mr="15px"
-                size="md"
-                cursor="pointer"
-                _hover={{ color: '#8dc641' }}
-              />
+              <Icon as={MdEmail} mr="15px" size="md" cursor="pointer" _hover={{ color: 'green' }} />
               <Icon
                 as={ImPrinter}
                 mr="15px"
@@ -122,6 +113,15 @@ const BlogIntroCard = props => {
           </Container>
         </Container>
         {/* Right - Author Summary */}
+        <Divider
+          display={{
+            lg: 'none',
+            md: 'block',
+            base: 'block',
+          }}
+          borderColor="white"
+          my={5}
+        />
         <Container
           pl={{ lg: '30px', base: '0' }}
           flexBasis={{ lg: '30%', base: '100%' }}
@@ -130,8 +130,7 @@ const BlogIntroCard = props => {
           alignItems="center"
           justifyContent="center"
           position="relative"
-          top={{ lg: '-55px', md: '10px', base: '10px' }}
-          mt={{ lg: '0px', md: '20px', base: '20px' }}
+          top={{ lg: '-65px', md: '10px', base: '10px' }}
           mb={{ lg: '0px', md: '20px', base: '20px' }}
         >
           <ResponsiveImage
@@ -151,7 +150,8 @@ const BlogIntroCard = props => {
               _before={{
                 content: `'by'`,
                 marginRight: '2px',
-                color: '#97999c',
+                fontWeight: 'normal',
+                color: 'gray.300',
                 fontStyle: 'italic',
                 textTransform: 'lowercase',
               }}
@@ -167,35 +167,42 @@ const BlogIntroCard = props => {
             mb="25px"
             textTransform="uppercase"
             fontSize="sm"
+            cursor="pointer"
+            _hover={{ color: 'green' }}
           >
             Read More
           </Link>
-          <Flex width="full" borderY="1px solid white" justifyContent="center" maxWidth="170px">
+          <Flex
+            width="full"
+            borderY="1px solid white"
+            justifyContent="center"
+            maxWidth={{ lg: '170px', md: 'auto', base: 'auto' }}
+          >
             <Container p="10px 17px 15px" borderRight="1px solid white">
               <Icon
                 as={ImFacebook2}
                 size="md"
-                color="#97999c"
+                color="gray.500"
                 cursor="pointer"
-                _hover={{ color: '#8dc641' }}
+                _hover={{ color: 'green' }}
               />
             </Container>
             <Container p="10px 17px 15px" borderRight="1px solid white">
               <Icon
                 as={ImTwitter}
                 size="md"
-                color="#97999c"
+                color="gray.500"
                 cursor="pointer"
-                _hover={{ color: '#8dc641' }}
+                _hover={{ color: 'green' }}
               />
             </Container>
             <Container p="10px 17px 15px">
               <Icon
                 as={ImInstagram}
                 size="md"
-                color="#97999c"
+                color="gray.500"
                 cursor="pointer"
-                _hover={{ color: '#8dc641' }}
+                _hover={{ color: 'green' }}
               />
             </Container>
           </Flex>
