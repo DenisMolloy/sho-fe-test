@@ -1,0 +1,21 @@
+import { Meta, Preview, Story } from '@storybook/addon-docs'
+
+import CartReminder from '.'
+
+<Meta title="Components/CartReminder" component={CartReminder} />
+
+# CartReminder
+
+The `CartReminder` Component displays an overview of the blog post and the author and requires data from a `Blog` content object.
+
+`CartReminder` should be used at the top of a `BlogPost` Section.
+
+## Props
+
+This component doesn't rely on props for the data displayed.
+
+### Default
+
+<Preview>
+  <Story name="Default">{args => <CartReminder {...args} />}</Story>
+</Preview>
