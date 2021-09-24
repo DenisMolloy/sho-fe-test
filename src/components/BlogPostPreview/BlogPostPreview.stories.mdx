@@ -1,0 +1,54 @@
+import { ArgsTable, Meta, Preview, Story } from '@storybook/addon-docs'
+
+import BlogPostPreview from '.'
+
+<Meta title="Components/BlogPostPreview" component={BlogPostPreview} />
+
+# BlogPostPreview
+
+The `BlogPostPreview` Component displays preview card for a blog post and requires data from a `Blog` content object.
+
+## Props
+
+<ArgsTable of={BlogPostPreview} />
+
+`BlogPostPreview` expects name, title, sport, author, authorImage, createdDate, summary, and heroImage props.
+
+### Default
+
+<Preview>
+  <Story
+    name="Default"
+    args={{
+      name: 'placeholder name',
+      title: 'placeholder title',
+      sport: 'placeholder sport',
+      authorImage: {
+        alt: '',
+        name: 'Head__sage-1.jpg',
+        size: 122234,
+        _type: 'image',
+        width: 408,
+        height: 408,
+        mimeType: 'image/jpeg',
+        src: 'https://f.shgcdn.com/6432a158-d02a-4af8-84e1-fdca22d6855f/',
+      },
+      heroImage: {
+        alt: 'Dusk on the Susitna River',
+        name: 'Marquee_susitna-1.jpg',
+        size: 395861,
+        _type: 'image',
+        width: 1480,
+        height: 450,
+        mimeType: 'image/jpeg',
+        src: 'https://f.shgcdn.com/b054262e-4136-4a0e-92b7-40563d3eee5e/',
+      },
+      summary:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      author: 'placeholder author',
+      createdDate: '7.9.21',
+    }}
+  >
+    {args => <BlogPostPreview {...args} />}
+  </Story>
+</Preview>
