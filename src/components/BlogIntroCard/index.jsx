@@ -33,7 +33,11 @@ const BlogIntroCard = props => {
     >
       <Container
         height={{ lg: '400px', md: '250px', base: '125px' }}
-        width={{ lg: '99vw', md: '98vw', base: '96.4vw' }}
+        width={{
+          lg: '99vw', //"99vw"
+          md: '100vw', //'98vw'
+          base: '100vw', //'96.4vw'
+        }}
         backgroundImage={`url(${heroImage.src || ''})`}
         backgroundPosition="center"
         backgroundRepeat="no-repeat"
@@ -61,7 +65,7 @@ const BlogIntroCard = props => {
           </Heading>
           <Flex display="inline-flex" width="full" borderY="1px solid white">
             <Text
-              color="green"
+              color="green.200"
               fontWeight="bold"
               p="25px"
               pl="0"
@@ -85,29 +89,35 @@ const BlogIntroCard = props => {
                 mr="15px"
                 size="md"
                 cursor="pointer"
-                _hover={{ color: 'green' }}
+                _hover={{ color: 'green.200' }}
               />
-              <Icon as={MdEmail} mr="15px" size="md" cursor="pointer" _hover={{ color: 'green' }} />
+              <Icon
+                as={MdEmail}
+                mr="15px"
+                size="md"
+                cursor="pointer"
+                _hover={{ color: 'green.200' }}
+              />
               <Icon
                 as={ImPrinter}
                 mr="15px"
                 size="md"
                 cursor="pointer"
-                _hover={{ color: 'green' }}
+                _hover={{ color: 'green.200' }}
               />
               <Icon
                 as={ImTwitter}
                 mr="15px"
                 size="md"
                 cursor="pointer"
-                _hover={{ color: 'green' }}
+                _hover={{ color: 'green.200' }}
               />
               <Icon
                 as={ImPinterest}
                 mr="15px"
                 size="md"
                 cursor="pointer"
-                _hover={{ color: 'green' }}
+                _hover={{ color: 'green.200' }}
               />
             </Flex>
           </Container>
@@ -142,7 +152,7 @@ const BlogIntroCard = props => {
           />
           <Flex justifyContent="center">
             <Text
-              color="green"
+              color="green.200"
               fontWeight="bold"
               fontSize="xs"
               mb="18px"
@@ -168,7 +178,7 @@ const BlogIntroCard = props => {
             textTransform="uppercase"
             fontSize="sm"
             cursor="pointer"
-            _hover={{ color: 'green' }}
+            _hover={{ color: 'green.200' }}
           >
             Read More
           </Link>
@@ -184,7 +194,7 @@ const BlogIntroCard = props => {
                 size="md"
                 color="gray.500"
                 cursor="pointer"
-                _hover={{ color: 'green' }}
+                _hover={{ color: 'green.200' }}
               />
             </Container>
             <Container p="10px 17px 15px" borderRight="1px solid white">
@@ -193,7 +203,7 @@ const BlogIntroCard = props => {
                 size="md"
                 color="gray.500"
                 cursor="pointer"
-                _hover={{ color: 'green' }}
+                _hover={{ color: 'green.200' }}
               />
             </Container>
             <Container p="10px 17px 15px">
@@ -202,7 +212,7 @@ const BlogIntroCard = props => {
                 size="md"
                 color="gray.500"
                 cursor="pointer"
-                _hover={{ color: 'green' }}
+                _hover={{ color: 'green.200' }}
               />
             </Container>
           </Flex>
