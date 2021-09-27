@@ -6,9 +6,9 @@ import Flex from 'Components/Flex'
 import Link from 'Components/Link'
 import Heading from 'Components/Heading'
 import Text from 'Components/Text'
+import Divider from 'Components/Divider'
 import { ImFacebook2, ImTwitter, ImPinterest, ImPrinter, ImInstagram } from 'react-icons/im'
 import { MdEmail } from 'react-icons/md'
-import Divider from 'Components/Divider'
 // import './styles.css'
 
 const blogIntroStyles = {
@@ -34,9 +34,9 @@ const BlogIntroCard = props => {
       <Container
         height={{ lg: '400px', md: '250px', base: '125px' }}
         width={{
-          lg: '99vw', //"99vw"
-          md: '100vw', //'98vw'
-          base: '100vw', //'96.4vw'
+          lg: '99vw',
+          md: '100vw',
+          base: '100vw',
         }}
         backgroundImage={`url(${heroImage.src || ''})`}
         backgroundPosition="center"

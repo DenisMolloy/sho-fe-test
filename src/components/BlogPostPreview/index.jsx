@@ -1,11 +1,11 @@
 import React from 'react'
-import VStack from 'Components/VStack'
 import Text from 'Components/Text'
 import Container from 'Components/Container'
 import Heading from 'Components/Heading'
 import Link from 'frontend-link'
 import Flex from 'Components/Flex'
 import ResponsiveImage from 'frontend-ui/ResponsiveImage'
+// import './styles.css'
 
 const blogPreview = {
   authorImage: {

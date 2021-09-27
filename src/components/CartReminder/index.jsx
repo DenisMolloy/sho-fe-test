@@ -1,8 +1,9 @@
 import React from 'react'
 import { useCartState } from 'frontend-checkout'
+import Link from 'frontend-link'
 import Container from 'Components/Container'
 import Text from 'Components/Text'
-import Link from 'frontend-link'
+// import './styles.css'
 
 const CartReminder = () => {
   const cart = useCartState()
