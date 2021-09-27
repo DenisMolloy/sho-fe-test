@@ -15,7 +15,7 @@ const BlogListing = ({ blogPosts }) => {
         Kokatat Blog
       </Heading>
       <Text fontStyle="italic">Get inspired for your next adventure...</Text>
-      <VStack spacing="10" my="10">
+      <VStack spacing="10" py="10" maxWidth="1100px" margin="auto">
         {blogPosts ? (
           blogPosts.map(blog => <BlogPostPreview key={blog.title} {...blog} />)
         ) : (
