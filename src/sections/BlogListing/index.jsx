@@ -1,10 +1,10 @@
 import Container from 'Components/Container'
 import Heading from 'Components/Heading'
-import Text from 'Components/Text'
 import React from 'react'
-import BlogPostPreview from 'Components/BlogPostPreview'
-import './styles.css'
+import Text from 'Components/Text'
 import VStack from 'Components/VStack'
+import BlogPostPreview from 'Components/BlogPostPreview'
+// import './styles.css'
 
 const BlogListing = ({ blogPosts }) => {
   if (!blogPosts) return 'null'
